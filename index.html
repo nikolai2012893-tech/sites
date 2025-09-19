@@ -12,14 +12,14 @@
             box-sizing: border-box;
         }
 
-        /* Фон с зернистостью */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #2e2e2e;
-            background-image: url('https://www.transparenttextures.com/patterns/black-tie.png'); /* текстура зернистости */
+            background-color: #1e1e2f;
+            background-image: url('https://www.transparenttextures.com/patterns/black-tie.png');
             color: #fff;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
@@ -27,60 +27,97 @@
             background-position: center;
         }
 
-        /* Контейнер */
+        /* Контейнер с контентом */
         .container {
             text-align: center;
-            background-color: rgba(40, 40, 40, 0.9);
-            padding: 50px 70px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 1s ease-in-out;
+            background-color: rgba(40, 40, 40, 0.8);
+            padding: 60px 80px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-out;
         }
 
         /* Заголовок */
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #00e676;
-            text-shadow: 0px 4px 8px rgba(0, 230, 118, 0.6);
+            text-shadow: 0px 4px 10px rgba(0, 230, 118, 0.8);
         }
 
-        /* Кнопка */
+        /* Описание экзекутора */
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Кнопка Download */
         .download-button {
             display: inline-block;
-            padding: 18px 35px;
+            padding: 20px 40px;
             font-size: 1.4rem;
             font-weight: bold;
-            color: #2e2e2e;
+            color: #1e1e2f;
             background-color: #00e676;
             border-radius: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .download-button:hover {
             background-color: #00c853;
             transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.7);
+            box-shadow: 0 10px 25px rgba(0, 200, 83, 0.7);
         }
 
         .download-button:active {
             transform: translateY(2px);
-            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
         }
 
-        /* Анимация для загрузки */
+        /* Анимация для появления */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Футер */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Кнопка Промпт */
+        .prompt-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #333;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .prompt-button:hover {
+            background-color: #555;
+            transform: translateY(-4px);
+        }
+
+        .prompt-button:active {
+            transform: translateY(2px);
         }
 
     </style>
@@ -89,10 +126,15 @@
 
     <div class="container">
         <h1>Vanish Executor</h1>
+        <p>Vanish Executor — это мощный инструмент, который предоставляет доступ к высококлассным функциям исполнения и автоматизации задач. Получите полный контроль и ускорьте свою работу.</p>
         <a href="https://s839sas.storage.yandex.net/rdisk/38c6fd702011e48ab82418fe99f230a6c90b40289299b57a2c325d94a931dcbc/68cd3216/7mkC73RYgrAC128Q2Nr4KPZT1God_zoloBmD5WIghzCkfOmeFq6WnDD9JDO6QW15lRpTZ3JY0BA2iMmYAx3Ubg==?uid=0&filename=Vanish%202.0.7z&disposition=attachment&hash=x1Fq5N7%2B5ijGLTBUWUyQClnj/mHimpf4sNzPQFNQzUG7DU0pNNXgp/gE8Z46aSJNq/J6bpmRyOJonT3VoXnDag%3D%3D&limit=0&content_type=application%2Fx-7z-compressed&owner_uid=1892005604&fsize=214282252&hid=9e2603a5d996f2fb2d5bfc8e363dcdc9&media_type=compressed&tknv=v3&ts=63f2509803180&s=57c28672e580610e90e503710bbd1b4edfbb2453896694046d9d9931762fe1aa&pb=U2FsdGVkX18kkx6cpQLKtegb7XEE7oofA99WAN7JuNusYFmPyZYp5l_l_dr096GQSZNn9WBuBN5Qs80q-rUjTAK0F8QhkZzsTcA8J5MYfTc" class="download-button" download>
             Скачать
         </a>
     </div>
+
+    <footer>
+        <a href="#" class="prompt-button">Промпт</a>
+    </footer>
 
 </body>
 </html>
